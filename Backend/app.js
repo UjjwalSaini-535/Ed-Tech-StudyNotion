@@ -13,12 +13,12 @@ const app = express();
 
 app.use(express.json());
 app.use(cookieParser());
-// app.use(
-//   cors({
-//     origin: "https://ed-tech-study-notion-front-end.vercel.app/",
-//     credentials: true,
-//   })
-// );
+app.use(
+  cors({
+    origin: "https://ed-tech-study-notion-front-end.vercel.app/",
+    credentials: true,
+  })
+);
 app.use(
   fileUpload({
     useTempFiles: true,
