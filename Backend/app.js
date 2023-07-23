@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "https://ed-tech-study-notion-front-end.vercel.app/",
+    origin: "https://ed-tech-study-notion-front-end.vercel.app",
     credentials: true,
   })
 );
