@@ -16,7 +16,7 @@ exports.capturePayment = async (req, res) => {
   const user = req.user;
 
   if (courses.length === 0) {
-    return res.json(400).status({
+    return res.status(400).json({
       success: false,
       message: "Please Provide course Id",
     });
@@ -53,10 +53,17 @@ exports.capturePayment = async (req, res) => {
     }
   }
 
+  if (totalAmount <= 0) {
+    return res.status(400).json({
+      success: false,
+      message: "Invalid total amount",
+    });
+  }
+
   const options = {
     amount: totalAmount * 100,
     currency: "INR",
-    receipt: Math.random(Date.now()).toString(),
+    receipt: `receipt_${Date.now()}`,
   };
 
   try {
