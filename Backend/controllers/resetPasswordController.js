@@ -38,11 +38,13 @@ exports.resetPasswordToken = async (req, res) => {
 
     console.log("Reset Password URL: ", url);
 
-    const res = await mailSender(
+    const response = await mailSender(
       email,
       "Password Reset",
       `Your Link for email verification is ${url}. Please click this url to reset your password. It is valid only for next 15 min.`
     );
+
+    console.log("Mail Sent Response: ", response);
 
     return res.status(200).json({
       success: true,
