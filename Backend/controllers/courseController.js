@@ -129,7 +129,7 @@ exports.editCourse = async (req, res) => {
 
       const uploadedThumbNailImage = await uploadToCloudinary(
         thumbNail,
-        process.env.FOLDER_NAME
+        process.env.CLOUDINARY_FOLDER_NAME
       );
 
       course.thumbNail = uploadedThumbNailImage.secure_url;

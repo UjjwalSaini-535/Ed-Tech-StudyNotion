@@ -81,7 +81,7 @@ exports.updateSubSection = async (req, res) => {
 
       const uploadDetails = await uploadToCloudinary(
         video,
-        process.env.FOLDER_NAME
+        process.env.CLOUDINARY_FOLDER_NAME
       );
 
       subSection.videoUrl = uploadDetails.secure_url;
