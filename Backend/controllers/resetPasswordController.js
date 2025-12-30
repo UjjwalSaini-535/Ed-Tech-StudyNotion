@@ -18,6 +18,8 @@ exports.resetPasswordToken = async (req, res) => {
 
     const resetPasswordToken = crypto.randomBytes(20).toString("hex");
 
+    console.log("Reset Password Token: ", resetPasswordToken);
+
     const updatedUser = await User.findOneAndUpdate(
       { email },
       {
@@ -30,9 +32,13 @@ exports.resetPasswordToken = async (req, res) => {
       }
     );
 
+    console.log("Updated User: ", updatedUser);
+
     const url = `${process.env.FRONTEND_URL}/update-password/${resetPasswordToken}`;
 
-    await mailSender(
+    console.log("Reset Password URL: ", url);
+
+    const res = await mailSender(
       email,
       "Password Reset",
       `Your Link for email verification is ${url}. Please click this url to reset your password. It is valid only for next 15 min.`
