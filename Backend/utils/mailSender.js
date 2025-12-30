@@ -1,27 +1,17 @@
-const nodemailer = require("nodemailer");
+const sgMail = require("@sendgrid/mail");
+
+sgMail.setApiKey(process.env.SENDGRID_MAIL_API_KEY);
 
 const mailSender = async (email, title, body) => {
   try {
-    console.log("Sending mail to: ", email);
-
-    const transporter = nodemailer.createTransport({
-      host: process.env.MAIL_HOST,
-      port: Number(process.env.MAIL_PORT),
-      secure: false,
-      auth: {
-        user: process.env.MAIL_USER,
-        pass: process.env.MAIL_PASS,
-      },
-    });
-
-    console.log("Transporter created: ", transporter);
-
-    let info = await transporter.sendMail({
-      from: `StudyNotion <${process.env.MAIL_USER}>`,
+    const msg = {
       to: email,
+      from: `StudyNotion <${process.env.MAIL_USER}>`,
       subject: title,
       html: body,
-    });
+    };
+
+    const info = await sgMail.send(msg);
 
     console.log("Message sent: ", info);
 
