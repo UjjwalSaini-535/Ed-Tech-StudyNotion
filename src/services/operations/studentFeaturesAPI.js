@@ -64,7 +64,7 @@ export const buyCourse = async (
       key: process.env.REACT_APP_RAZORPAY_KEY,
       amount: orderRes.data.message.amount,
       currency: orderRes.data.message.currency,
-      name: "StudyNotion",
+      name: "CourseHub",
       description: "Thank you for purchasing the course",
       image: rzpLogo,
       order_id: orderRes.data.message.id,

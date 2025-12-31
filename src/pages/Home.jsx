@@ -142,7 +142,7 @@ const Home = () => {
 
             <div className="w-[50%] flex flex-col gap-16 items-start">
               <p className="text-sm font-medium text-richblack-700">
-                The modern StudyNotion is the dictates its own terms. Today, to
+                The modern CourseHub is the dictates its own terms. Today, to
                 be a competitive specialist requires more than professional
                 skills.
               </p>

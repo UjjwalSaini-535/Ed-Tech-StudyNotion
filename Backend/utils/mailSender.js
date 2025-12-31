@@ -6,7 +6,7 @@ const mailSender = async (email, title, body) => {
   try {
     const msg = {
       to: email,
-      from: `StudyNotion <${process.env.MAIL_USER}>`,
+      from: `CourseHub <${process.env.MAIL_USER}>`,
       subject: title,
       html: body,
     };

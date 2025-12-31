@@ -20,7 +20,7 @@ const InstructorSection = () => {
             <HighLightText text="instructor" />
           </div>
 
-          <ParagraphWithLightColor text="Instructors from around the world teach millions of students on StudyNotion. We provide the tools and skills to teach what you love." />
+          <ParagraphWithLightColor text="Instructors from around the world teach millions of students on CourseHub. We provide the tools and skills to teach what you love." />
         </div>
 
         <div className="flex ">

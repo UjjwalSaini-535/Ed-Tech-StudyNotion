@@ -1,1 +1,1 @@
-# Ed Tech Project
+# CourseHub Project

@@ -22,7 +22,7 @@ const About = () => {
             Driving Innovation in Online Education for a
             <HighLightText text="Brighter Future" />
             <ParagraphWithLightColor
-              text="Studynotion is at the forefront of driving innovation in online
+              text="CourseHub is at the forefront of driving innovation in online
               education. We're passionate about creating a brighter future by
               offering cutting-edge courses, leveraging emerging technologies,
               and nurturing a vibrant learning community."
